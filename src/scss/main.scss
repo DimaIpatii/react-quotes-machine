@@ -1,0 +1,230 @@
+// ********************************************
+// Animation Settings:
+// ********************************************
+@keyframes show-text{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  
+  @keyframes showQuoteItemTop{
+    0%{
+      opacity: 0;
+      transform: rotate(310deg) translate(50px,7px);
+    }
+    100%{
+      opacity: 1;
+      transform: rotate(310deg) translate(-25px, 7px);
+      
+    }
+  }
+  
+  @keyframes showQuoteItemBottom{
+    0%{
+      opacity: 0;
+      transform: rotate(310deg) translate(-50px,7px);
+    }
+    100%{
+      opacity: 1;
+      transform: rotate(310deg) translate(15px, 7px);
+    }
+  }
+  
+  
+  .showText{
+    animation: show-text 2s;
+  }
+  .showAuthor{
+    animation-name: show-text;
+    animation-duration: 5s;
+  }
+  
+  .showQuoteSymbolTop{
+      animation: showQuoteItemTop 1s;
+   }
+  .showQuoteSymbolBottom{
+    
+    animation: showQuoteItemBottom 1s;
+  }
+  
+  
+  // ********************************************
+  // Global Settings:
+  // ********************************************
+  *,
+  *::before,
+  *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html{
+    font-size:62.5%;
+  }
+  html,
+  body{
+      margin: 0px;
+      padding: 0px;
+  
+      min-width: 100%;
+      width: 100vw;
+      max-width: 100%;
+  
+      min-height: 100%;
+      height: 100vh;
+      max-width: 100%;
+  
+      overflow: auto;
+  }
+  
+  body{
+    font-size:1.6rem;
+  }
+  
+  a,
+  a:visited,
+  a:active{
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  button{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+  // ********************************************
+  
+  // ********************************************
+  // Layout:
+  // ********************************************
+  .wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-image: linear-gradient(to right bottom, #082757, #05467a, #00679c, #008abd, #12aedc);
+    
+    color: white;
+    
+    
+    &__main{
+      width: 124rem;
+      height: 60rem;
+      
+      background-image: linear-gradient(to right bottom, #0647ad, #0063c0, #007dcd, #0096d6, #12aedc);
+      box-shadow: 2px 3px 10px 0px #052386
+    }
+    
+  }
+  
+  .main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    &__navigation{
+      bottom: 1rem;
+    }
+    &__blockquote{
+       position: relative;
+    }
+  }
+  
+  .blockquote{
+      max-width: 50rem;
+      max-height: 25rem;
+    
+      text-align: center;
+      font-size: 2.5rem;
+      font-family: 'Sumana', serif;
+      font-weight:300;
+      line-height: 1.2;
+      letter-spacing: 2px;
+    
+    &__author{
+      position: absolute;
+      bottom: -10rem;
+      right: 15%;
+    }
+  }
+  .quote{
+     
+  }
+  .quote-symbols{
+    position: absolute;
+    max-width: 8rem;
+    max-height: 8rem;
+    
+    
+      &_top{
+        top: -5rem;
+        left: -5rem;
+      }
+      &_bottom{
+        bottom: -5rem;
+        right: -5rem;
+      }
+    }
+  .quote-symbol{
+    width: 5rem;
+    height: 1rem;
+    border-radius: 10rem;
+    margin-bottom: 1.5rem;
+    &_1{ 
+      transform: rotate(310deg) translate(-25px, 7px);
+      background-image: linear-gradient(to left, #0e5beb,  #f00cbb);
+    }
+    &_2{ 
+      transform: rotate(310deg) translate(15px, 7px);
+      background-image: linear-gradient(to left, #f0aa0c, #0e5ceb); 
+    }
+    &_3{ 
+      transform: rotate(310deg) translate(-25px, 7px);
+      background-image: linear-gradient(to left, #0E8EEB,  #5BF00C);  
+    }
+    &_4{ 
+      transform: rotate(310deg) translate(15px, 7px);
+      background-image: linear-gradient(to left, #0E5BEB,  #0C87F0);  
+    }
+    }
+  
+  .author{
+      font-size:2.5rem;
+      font-family: 'Roboto Condensed', sans-serif;
+      color:#01D95D;
+  }
+  
+  .navigation{
+    width: 20rem;
+    position: absolute;
+    bottom: 2rem;
+    
+    display: flex;
+    justify-content: space-between;
+    
+  }
+   .btn{
+     display: block;
+     min-width: 4rem;
+     min-height: 4rem;
+     border-radius: 1rem;
+     padding: 1rem 2rem;
+     
+     font-family: 'Roboto Condensed', sans-serif;
+     color: white;
+     
+      &_tweet{
+        background-color: #0D86D1;
+      }
+      &_next{
+        background-color: #41BC00;
+      }
+  }
