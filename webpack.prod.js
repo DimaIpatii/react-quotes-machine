@@ -1,13 +1,13 @@
 /// Read Caching section 
 const {merge} = require('webpack-merge');
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const common = require('./webpack.common.js');
-const TerserPlugin = require("terser-webpack-plugin");
 
 
 module.exports = merge(common, {
     mode : 'production',
-    devtool: 'source-map',
+    devtool: 'hidden-source-map',
     module : {
         rules : [
             {
@@ -15,19 +15,22 @@ module.exports = merge(common, {
                 use : [
                     {loader : MiniCssExtractPlugin.loader},
                     {loader : 'css-loader'},
+                    {loader : 'postcss-loader', 
+                    options : {
+                        postcssOptions : {
+                                config : path.resolve(__dirname, 'postcss.config.js')
+                            } 
+                        }
+                    },
                     {loader : 'sass-loader'}
                 ]
             }
         ]
     },
     plugins : [
-        new MiniCssExtractPlugin({filename : '[name].[contenthash].css'}),
+        new MiniCssExtractPlugin({filename : 'style.[contenthash].css'}),
     ],
     optimization : {
-        minimize : true,
-        minimizer : [new TerserPlugin({
-            parallel: true,
-        })],
         moduleIds: 'deterministic',
         runtimeChunk : 'single',
         splitChunks : {
