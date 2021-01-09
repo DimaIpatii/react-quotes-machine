@@ -8,9 +8,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = merge(common,{
     mode : 'development',
     devtool: 'eval-cheap-module-source-map',
+    target : 'web',
+    plugins : [
+        new MiniCssExtractPlugin({
+            filename : 'style.css'
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+    ],
     devServer : {
         index: 'index.html',
-        contentBase : path.join(__dirname, 'dist'),
+        contentBase: path.resolve(__dirname, './dist'),
         historyApiFallback: true,
         hot : true,
         compress : true,
@@ -25,15 +32,17 @@ module.exports = merge(common,{
                     {loader : 'css-loader', options : {importLoaders : 1,sourceMap : true}},
                     {loader : 'sass-loader', options : {sourceMap : true}}
                 ]
+            },
+            {
+                test : /\.m?js$/i,
+                exclude : /(node_modules|bower_components)/,
+                use : [
+                    {loader : 'babel-loader'}
+                ]
             }
         ]
     },
-    plugins : [
-        new MiniCssExtractPlugin({
-            filename : 'style.css'
-        }),
-        new webpack.HotModuleReplacementPlugin(),
-    ],
+   
     optimization : {
         runtimeChunk: true
     }
