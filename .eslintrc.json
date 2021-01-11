@@ -1,0 +1,36 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true,
+        "commonjs": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:import/errors",
+        "plugin:jsx-a11y/recommended"
+    ],
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module",
+        "requireConfigFile": false
+    },
+    "plugins": ["@babel","react","import","jsx-a11y","react-hooks"],
+    "rules": {
+        "@babel/new-cap": "error",
+        "@babel/no-invalid-this": "error",
+        "@babel/no-unused-expressions": "error",
+        "@babel/object-curly-spacing": "error",
+        "@babel/semi": "error",
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "jsx-a11y/rule-name": 2,
+        "react/react-in-jsx-scope": 0
+    }
+}

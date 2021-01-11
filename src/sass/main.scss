@@ -1,33 +1,30 @@
 /* Normalize: */
-@import '~normalize.css';
-
+@import "~normalize.css";
 
 /* Container */
-.container{
-    width: 300px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border:  1px solid red;
+.container {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
 
-    &__caption{
-        border: 2px dotted blue;
-    }
-    &__paragraph{
-        background-color: black;
-        color: red;
-        font-size: 20px;
-    }
+  &__caption {
+    border: 2px dotted blue;
+  }
+  &__paragraph {
+    background-color: black;
+    color: red;
+    font-size: 20px;
+  }
 }
 
-.caption{
-    background-color: red;
-    color: white;
+.caption {
+  background-color: red;
+  color: white;
 }
-
-
 
 ::placeholder {
   color: gray;
@@ -44,40 +41,35 @@
   }
 }
 
-
 /* Page */
 .page {
-    display: grid;
-    grid-gap: 33px;
-    grid-template:
-      "head head  head" 1fr
-      "nav  main  main" minmax(100px, 1fr)
-      "nav  foot  foot" 2fr /
-      1fr   100px 1fr;
-  }
-  .page__head {
-    grid-area: head;
-  }
-  .page__nav {
-    grid-area: nav;
-  }
-  .page__main {
-    grid-area: main;
-  }
-  .page__footer {
-    grid-area: foot;
-  }
-
-
-  .example {
-    display: grid;
-    transition: all .5s;
-    user-select: none;
-    background: linear-gradient(to bottom, white, black);
+  display: grid;
+  grid-gap: 33px;
+  grid-template:
+    "head head  head" 1fr
+    "nav  main  main" minmax(100px, 1fr)
+    "nav  foot  foot" 2fr /
+    1fr 100px 1fr;
+}
+.page__head {
+  grid-area: head;
+}
+.page__nav {
+  grid-area: nav;
+}
+.page__main {
+  grid-area: main;
+}
+.page__footer {
+  grid-area: foot;
 }
 
-
-
+.example {
+  display: grid;
+  transition: all 0.5s;
+  user-select: none;
+  background: linear-gradient(to bottom, white, black);
+}
 
 .foo {
   width: 240px;
@@ -85,7 +77,7 @@
 
 @media screen and (max-width: 1268px) {
   .foo {
-      width: 576px;
+    width: 576px;
   }
 }
 
@@ -93,20 +85,19 @@
   width: 160px;
 }
 
-
 @media screen and (min-width: 968px) {
   .bar {
-      width: 384px;
+    width: 384px;
   }
 }
 
 @media screen and (min-width: 1768px) {
   .bar {
-      width: 384px;
+    width: 384px;
   }
 }
 @media screen and (min-width: 768px) {
   .bar {
-      width: 384px;
+    width: 384px;
   }
 }
