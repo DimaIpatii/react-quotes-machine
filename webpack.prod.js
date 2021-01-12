@@ -1,4 +1,3 @@
-/// Read Caching section
 const {merge} = require("webpack-merge");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -24,7 +23,7 @@ module.exports = merge(common, {
           },
           {loader: "sass-loader"},
         ],
-      },
+      }
     ],
   },
   plugins: [new MiniCssExtractPlugin({

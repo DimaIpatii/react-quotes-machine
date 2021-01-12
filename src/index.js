@@ -10,9 +10,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 // App:
-import App from "./react/App.js"
-
-const a = 'hello';
+import App from "./react/App.js";
 
 ReactDOM.render(<App />,document.getElementById("root"));
 

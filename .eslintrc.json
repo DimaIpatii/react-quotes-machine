@@ -32,5 +32,6 @@
         "react/jsx-uses-vars": "error",
         "jsx-a11y/rule-name": 2,
         "react/react-in-jsx-scope": 0
-    }
+    },
+    "ignorePatterns": "dist"
 }

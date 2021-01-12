@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 
 const App = () => {
 
   return (
     <>
-      <h1 className="container__caption caption" id="someID" data-caption="mainCaption" data-text="quote">'Randome Quote Machine'</h1>
+      <h1 className="container__caption caption" id="someID" data-caption="mainCaption" data-text="quote">&lsquo;&lsquo;Randome Quote Machine&rsquo;&rsquo;</h1>
       <p className="container__paragraph">Som text inside</p>
     </>
   );
