@@ -17,7 +17,7 @@ module.exports = merge(common, {
     new webpack.HotModuleReplacementPlugin(),
     new ESLintPlugin({
         overrideConfigFile: path.resolve(__dirname, '.eslintrc.json'),
-        context: path.resolve(__dirname, './src'),
+        context: path.resolve(__dirname, 'src'),
         files: ['**/*.js',"**/*.jsx"],
         extensions: [".js", ".jsx"]
     }),
